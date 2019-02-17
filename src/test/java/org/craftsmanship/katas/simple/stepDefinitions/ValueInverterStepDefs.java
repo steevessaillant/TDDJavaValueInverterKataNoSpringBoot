@@ -1,26 +1,24 @@
 package org.craftsmanship.katas.simple.stepDefinitions;
 
 import cucumber.api.DataTable;
-import cucumber.api.PendingException;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.assertj.core.api.ThrowableAssertAlternative;
 import org.craftsmanship.katas.simple.ValueInverter;
 import org.junit.Assert;
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@ContextConfiguration(
-        classes = ValueInverter.class)
-public class ValueInverterStepDefs extends StepsDefsTestBase {
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
-    @Autowired
+public class ValueInverterStepDefs {
+
+
     private ValueInverter sut;
     private List<BoolTableValues> actualBoolTableValues;
     private List<BoolTableValues> expectedBoolTableValues;
@@ -28,6 +26,15 @@ public class ValueInverterStepDefs extends StepsDefsTestBase {
     private List<FloatTableValues> expectedFloatTableValues;
     private ThrowableAssertAlternative<NullPointerException> trownNullPointerException;
 
+    @Before
+    public void setup(){
+        sut = new ValueInverter();
+    }
+
+    @After
+    public void teardown(){
+        sut = null;
+    }
 
     @Given("^I start the system$")
     public void i_start_the_system() throws Throwable {

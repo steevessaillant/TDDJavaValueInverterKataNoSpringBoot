@@ -1,16 +1,16 @@
 package org.craftsmanship.katas.simple;
 
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import java.awt.*;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 
-public class ValueInverterTest extends TestBase {
+public class ValueInverterTest{
 
-	@Autowired
-	private ValueInverter sut;
+	private ValueInverter sut = new ValueInverter();
 
 	@Test
 	public void invertValueShouldReturnFalseWhenPassedTrue() {

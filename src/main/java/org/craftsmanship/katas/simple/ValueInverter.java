@@ -1,10 +1,8 @@
 package org.craftsmanship.katas.simple;
 
-import java.awt.Color;
+import java.awt.*;
 
-import org.springframework.stereotype.Component;
 
-@Component
 public class ValueInverter {
 
 	public boolean invertValue(boolean value) {
