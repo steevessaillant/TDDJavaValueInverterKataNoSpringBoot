@@ -13,7 +13,7 @@ node {
 
     }
 
-    stage('Test') {
+    stage('Unit Tests') {
         //maven test
         if (isUnix()) {
             sh "'${mvnHome}/bin/mvn' test "
@@ -29,6 +29,15 @@ node {
               }
     }
 
+   stage('Functional Tests') {
+        //maven test
+        if (isUnix()) {
+            sh "'${mvnHome}/bin/mvn' failsafe:integration-test"
+        } else {
+            bat(/"${mvnHome}\bin\mvn" failsafe:integration-test/)
+        }
+
+    }
     stage('Cucumber functional tests report') {
             cucumber buildStatus: 'UNSTABLE',
                     fileIncludePattern: '**/cucumber.json',

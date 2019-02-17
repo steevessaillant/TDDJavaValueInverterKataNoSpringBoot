@@ -52,6 +52,11 @@
 							</goals>
 						</execution>
 					</executions>
+                    <configuration>
+                        <includes>
+                            <exclude>**/*CucumberRunner.java</exclude>
+                        </includes>
+                    </configuration>
 				</plugin>
 			</plugins>
 		</pluginManagement>
