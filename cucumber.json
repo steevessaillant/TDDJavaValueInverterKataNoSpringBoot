@@ -1,0 +1,236 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 2,
+        "name": "Test with boolean",
+        "description": "",
+        "id": "implement-a-value-converter-for-boolean,-numbers-and-colors;test-with-boolean",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 216146376,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "I start the system",
+            "match": {
+              "location": "ValueInverterStepDefs.i_start_the_system()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 23666904,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I pass",
+            "match": {
+              "location": "ValueInverterStepDefs.i_pass(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "value"
+                ],
+                "line": 5
+              },
+              {
+                "cells": [
+                  "false"
+                ],
+                "line": 6
+              },
+              {
+                "cells": [
+                  "true"
+                ],
+                "line": 7
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 159243250,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I should obtain",
+            "match": {
+              "location": "ValueInverterStepDefs.i_should_obtain(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "value"
+                ],
+                "line": 9
+              },
+              {
+                "cells": [
+                  "true"
+                ],
+                "line": 10
+              },
+              {
+                "cells": [
+                  "false"
+                ],
+                "line": 11
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 12,
+        "name": "Test with floats",
+        "description": "",
+        "id": "implement-a-value-converter-for-boolean,-numbers-and-colors;test-with-floats",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 915048,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "I start the system",
+            "match": {
+              "location": "ValueInverterStepDefs.i_start_the_system()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 9264566,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "I pass floats",
+            "match": {
+              "location": "ValueInverterStepDefs.iPassFloats(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "value"
+                ],
+                "line": 15
+              },
+              {
+                "cells": [
+                  "1.1"
+                ],
+                "line": 16
+              },
+              {
+                "cells": [
+                  "-2.2"
+                ],
+                "line": 17
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 763067,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "I should obtain inverted floats",
+            "match": {
+              "location": "ValueInverterStepDefs.iShouldObtainInvertedFloats(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "value"
+                ],
+                "line": 19
+              },
+              {
+                "cells": [
+                  "-1.1"
+                ],
+                "line": 20
+              },
+              {
+                "cells": [
+                  "2.2"
+                ],
+                "line": 21
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 23,
+        "name": "Test float inversion with null",
+        "description": "",
+        "id": "implement-a-value-converter-for-boolean,-numbers-and-colors;test-float-inversion-with-null",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1071767,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "I start the system",
+            "match": {
+              "location": "ValueInverterStepDefs.i_start_the_system()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 11293621,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "I pass null",
+            "match": {
+              "location": "ValueInverterStepDefs.iPassNull()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1293226,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "I should obtain \"Value was null, cannot pass a null value to this method\"     |",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Value was null, cannot pass a null value to this method",
+                  "offset": 17
+                }
+              ],
+              "location": "ValueInverterStepDefs.iShouldObtain(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Implement a Value converter for boolean, numbers and colors",
+    "description": "",
+    "id": "implement-a-value-converter-for-boolean,-numbers-and-colors",
+    "keyword": "Feature",
+    "uri": "features/ValueInverterTests.feature"
+  }
+]
