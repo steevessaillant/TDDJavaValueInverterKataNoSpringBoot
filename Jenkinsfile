@@ -3,7 +3,7 @@ node {
     mvnHome = tool 'Maven_3_6_0'
     stage('Fetch sources and build sources') {
         //get sources
-        git 'https://github.com/steevessaillant/TDDJavaValueInverterKata'
+        git 'https://github.com/steevessaillant/TDDJavaValueInverterKataNoSpringBoot'
         //maven compile
         if (isUnix()) {
             sh "'${mvnHome}/bin/mvn' compile "
