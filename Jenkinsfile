@@ -13,14 +13,6 @@ node {
 
     }
 
-    step([$class: 'XUnitBuilder', testTimeMargin: '3000', thresholdMode: 1,
-          thresholds: [
-                  [$class: 'FailedThreshold', failureNewThreshold: '', failureThreshold: '', unstableNewThreshold: '', unstableThreshold: '1'],
-                  [$class: 'SkippedThreshold', failureNewThreshold: '', failureThreshold: '', unstableNewThreshold: '', unstableThreshold: '']],
-          tools: [
-                  [$class: 'JUnitType', deleteOutputFiles: false, failIfNotNew: false, pattern: 'target/surefire-reports/**', skipNoTestFiles: false, stopProcessingIfError: true]]
-    ])
-/*
     stage('Unit Tests') {
         //maven test
         if (isUnix()) {
@@ -30,7 +22,7 @@ node {
         }
 
     }
-*/
+
     stage('JUnit unit-test report'){
         always {
                 junit '**/surefire-reports/*.xml'
@@ -57,6 +49,11 @@ node {
                         ]
                     ]
         }
+    post {
+        always {
+            junit '**/surefire-reports/*.xml'
+        }
+    }
     stage('Deploy') {
 
         //maven compile
