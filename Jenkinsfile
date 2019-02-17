@@ -13,23 +13,22 @@ node {
 
     }
 
-    stage('Unit Tests') {
-        //maven test
-        if (isUnix()) {
-            sh "'${mvnHome}/bin/mvn' test "
-        } else {
-            bat(/"${mvnHome}\bin\mvn" test/)
+    try {
+        stage('Unit Tests') {
+            //maven test
+            if (isUnix()) {
+                sh "'${mvnHome}/bin/mvn' test "
+            } else {
+                bat(/"${mvnHome}\bin\mvn" test/)
+            }
+
         }
-
+    }
+    finally {
+        junit '**/surefire-reports/*.xml'
     }
 
-    stage('JUnit unit-test report'){
-        always {
-                junit '**/surefire-reports/*.xml'
-              }
-    }
-
-   stage('Functional Tests') {
+    stage('Functional Tests') {
         //maven test
         if (isUnix()) {
             sh "'${mvnHome}/bin/mvn' failsafe:integration-test"
@@ -39,20 +38,15 @@ node {
 
     }
     stage('Cucumber functional tests report') {
-            cucumber buildStatus: 'UNSTABLE',
-                    fileIncludePattern: '**/cucumber.json',
-                    trendsLimit: 10,
-                    classifications: [
+        cucumber buildStatus: 'UNSTABLE',
+                fileIncludePattern: '**/cucumber.json',
+                trendsLimit: 10,
+                classifications: [
                         [
-                            'key': 'Browser',
-                            'value': 'Chrome'
+                                'key'  : 'Browser',
+                                'value': 'Chrome'
                         ]
-                    ]
-        }
-    post {
-        always {
-            junit '**/surefire-reports/*.xml'
-        }
+                ]
     }
     stage('Deploy') {
 
