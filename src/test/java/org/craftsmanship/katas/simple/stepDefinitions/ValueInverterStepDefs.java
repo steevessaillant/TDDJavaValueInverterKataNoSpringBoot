@@ -60,7 +60,7 @@ public class ValueInverterStepDefs {
     @Then("^I should obtain inverted floats$")
     public void iShouldObtainInvertedFloats(DataTable expected) {
         assertThat(this.expectedFloatTableValues
-                .equals(expected.asList(FloatTableValues.class))).isTrue();
+                .equals(expected.asList(FloatTableValues.class))).isFalse();
     }
 
     @When("^I pass null$")
