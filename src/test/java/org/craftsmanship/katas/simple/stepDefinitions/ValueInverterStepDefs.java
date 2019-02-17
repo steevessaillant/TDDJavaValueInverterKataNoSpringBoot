@@ -53,14 +53,14 @@ public class ValueInverterStepDefs {
     @Then("^I should obtain$")
     public void i_should_obtain(DataTable expected) throws Throwable {
         assertThat(this.expectedBoolTableValues
-                .equals(expected.asList(BoolTableValues.class))).isFalse();
+                .equals(expected.asList(BoolTableValues.class))).isTrue();
     }
 
 
     @Then("^I should obtain inverted floats$")
     public void iShouldObtainInvertedFloats(DataTable expected) {
         assertThat(this.expectedFloatTableValues
-                .equals(expected.asList(FloatTableValues.class))).isFalse();
+                .equals(expected.asList(FloatTableValues.class))).isTrue();
     }
 
     @When("^I pass null$")
