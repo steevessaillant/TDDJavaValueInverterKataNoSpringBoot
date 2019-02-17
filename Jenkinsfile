@@ -18,7 +18,7 @@ node {
                   [$class: 'FailedThreshold', failureNewThreshold: '', failureThreshold: '', unstableNewThreshold: '', unstableThreshold: '1'],
                   [$class: 'SkippedThreshold', failureNewThreshold: '', failureThreshold: '', unstableNewThreshold: '', unstableThreshold: '']],
           tools: [
-                  [$class: 'JUnitType', deleteOutputFiles: false, failIfNotNew: false, pattern: 'surefire-reports/**', skipNoTestFiles: false, stopProcessingIfError: true]]
+                  [$class: 'JUnitType', deleteOutputFiles: false, failIfNotNew: false, pattern: 'target/surefire-reports/**', skipNoTestFiles: false, stopProcessingIfError: true]]
     ])
 /*
     stage('Unit Tests') {
