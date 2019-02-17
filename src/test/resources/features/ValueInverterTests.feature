@@ -1,4 +1,4 @@
-Feature: Implement a Value converter for boolean, numbers and colors
+Feature: Implement a Value converter for boolean, numbers
   Scenario: Test with boolean
     Given I start the system
     When I pass
@@ -13,7 +13,7 @@ Feature: Implement a Value converter for boolean, numbers and colors
     Given I start the system
     When I pass floats
       | value |
-      | 1.1 |
+      | 1.1   |
       | -2.2  |
     Then I should obtain inverted floats
       | value    |

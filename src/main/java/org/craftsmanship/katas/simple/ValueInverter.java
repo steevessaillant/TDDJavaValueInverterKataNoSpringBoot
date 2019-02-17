@@ -1,8 +1,5 @@
 package org.craftsmanship.katas.simple;
 
-import java.awt.*;
-
-
 public class ValueInverter {
 
 	public boolean invertValue(boolean value) {
@@ -14,13 +11,6 @@ public class ValueInverter {
 			throw new NullPointerException("Value was null, cannot pass a null value to this method");
 		else
 			return -value.floatValue();
-	}
-
-	public Color invertColor(Color color) {
-		if (color == null)
-			throw new NullPointerException("Color was null, cannot pass a null value to this method");
-		else
-			return new Color(255 - color.getRed(), 255 - color.getGreen(), 255 - color.getBlue());
 	}
 
 }

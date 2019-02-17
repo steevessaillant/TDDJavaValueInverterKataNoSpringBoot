@@ -41,41 +41,6 @@ public class ValueInverterTest{
 	public void invertValueShouldReturnOneWhenPassedMinusOne() {
 		assertThat(sut.invertValue(-1.1F)).isEqualTo(1.1F);
 	}
-	
-	@Test
-	public void invertColorShouldThrowNullPointerExceptionWhenPassedNullAndDisplayMessage() {
-		assertThatExceptionOfType(NullPointerException.class)
-				.isThrownBy ( ( ) -> {
-					sut.invertColor ( null );
-				} )
-				.withMessage ( "Color was null, cannot pass a null value to this method" );
-	}
-
-	@Test 
-	public void invertColorShouldReturnBLACKWhenPassedWHITE(){
-		assertThat(sut.invertColor(Color.BLACK)).isEqualTo(Color.WHITE);
-	}
-	
-	@Test 
-	public void invertColorShouldReturnWHITEWhenPassedBLACK(){
-		assertThat(sut.invertColor(Color.WHITE)).isEqualTo(Color.BLACK);
-	}
-	
-	
-	@Test 
-	public void invertColorShouldReturnCYANWhenPassedRED(){
-		assertThat(sut.invertColor(Color.RED)).isEqualTo(Color.CYAN);
-	}
-	
-	@Test 
-	public void invertColorShouldReturnMAGENTAWhenPassedGREEN(){
-		assertThat(sut.invertColor(Color.GREEN)).isEqualTo(Color.MAGENTA);
-	}
-	
-	@Test 
-	public void invertColorShouldReturnYELLOWWhenPassedBLUE(){
-		assertThat(sut.invertColor(Color.BLUE)).isEqualTo(Color.YELLOW);
-	}
 
 
 }
